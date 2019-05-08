@@ -9,10 +9,10 @@ You need to have the following programs installed
 * [Helm](https://helm.sh/)
 
 ## How to use
-* Run `az login` to login to Microsoft Azure account
+* Run `az login` to login to your Microsoft Azure account
 * Run the numbered bash scripts in ascending order
 
 You can access the Kubernetes cluster using the kubeconfig file in 'artefacts/kubeconfig' (e.g. `kubectl --kubeconfig=artefacts/kubeconfig get node`).  
 
 OpenFaaS is running behind a load balancer on port 8080. You can find its IP by running `helm status openfaas | grep gateway-external`.  
-The login credentials can be found in artefacts/openfaas-login.txt'.
+The login credentials can be found in 'artefacts/openfaas-login.txt'.
