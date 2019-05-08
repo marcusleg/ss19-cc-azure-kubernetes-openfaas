@@ -12,7 +12,7 @@ PASSWORD=$(head -c 12 /dev/urandom | shasum| cut -d' ' -f1)
 kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-user=admin \
 --from-literal=basic-auth-password="$PASSWORD"
-echo "Username: admin\nPassword: ${PASSWORD}" > artefacts/openfaas-login.txt
+echo -e "Username: admin\nPassword: ${PASSWORD}" > artefacts/openfaas-login.txt
 
 # install OpenFaaS helm chart
 helm repo update \
