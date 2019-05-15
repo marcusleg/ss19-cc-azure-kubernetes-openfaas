@@ -20,7 +20,8 @@ The login credentials can be found in 'artefacts/openfaas-login.txt'.
 
 # How to login and start using your OpenFaaS installation
 ```
-export OPENFAAS_URL=http://${helm status openfaas | grep gateway-external | cut -d ' ' -f 7}:8080
+export KUBECONFIG=${PWD}/artefacts/kubeconfig
+export OPENFAAS_URL=http://$(helm status openfaas | grep gateway-external | cut -d ' ' -f 8):8080
 grep Password artefacts/openfaas-login.txt | cut -d ' ' -f 2 | faas-cli login -u admin --password-stdin
 faas-cli list
 ```
