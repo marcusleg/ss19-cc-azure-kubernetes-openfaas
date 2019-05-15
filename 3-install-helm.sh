@@ -1,4 +1,5 @@
 #!/bin/bash
+export KUBECONFIG=artefacts/kubeconfig
 kubectl -n kube-system create sa tiller \
 && kubectl create clusterrolebinding tiller \
   --clusterrole cluster-admin \

@@ -1,4 +1,5 @@
 #!/bin/bash
+export KUBECONFIG=artefacts/kubeconfig
 set -e
 
 # create namespaces
