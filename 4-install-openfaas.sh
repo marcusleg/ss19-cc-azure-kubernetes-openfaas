@@ -9,7 +9,7 @@ kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/na
 helm repo add openfaas https://openfaas.github.io/faas-netes/
 
 # generate password
-PASSWORD=$(head -c 12 /dev/urandom | shasum| cut -d' ' -f1)
+PASSWORD=$(openssl rand -hex 16)
 kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-user=admin \
 --from-literal=basic-auth-password="$PASSWORD"
